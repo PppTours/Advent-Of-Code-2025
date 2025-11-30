@@ -16,4 +16,4 @@ Un salon spécial sera au passage créé sur ce serveur.
 
 Cette année l'advent of code ne durera que 12 jours, mais vous aurez jusqu'au 24 décembre pour soumettre vos solutions, le leaderboard sera publié juste après.
 
-On espère que l'idée vous plaira
+On espère que l'idée vous plaira !
