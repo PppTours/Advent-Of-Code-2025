@@ -11,8 +11,10 @@ Et puisque un peu de compétition ne fait jamais de mal, un classement sera mis 
 - Eso-langs (Brainfuck et co...) => 5pts ainsi que mon respect vaguement horrifié
 En cas de doute sur l'appartenance d'un langage à une catégorie, posez la question.
 
-Pour participer, il suffira d'ajouter vous solution sur ce dépot GitHub (<à créer>), dans le répertoire du jour correspondant, et avec un nom de fichier indiquant qui vous êtes et quel langage vous avez utilisé, histoire qu'on puisse facilement compter les points.
-Un salon spécial sera au passage créé sur ce serveur.
+**Pour participer :**
+Tout d'abord il faudra communiquer votre pseodo GitHub sur le serveur P++, afin que nous puissions vous authoriser à contribuer directement sur ce dépot.
+Une fois ceci fait, chaque puzzle devra être soumis dans le dossier "JourX" correspondant (créez le dossier s'il n'existe pas encore), avec un nom de fichier de la forme suivante : 
+- _**"Pseodo_language[_PartieN].extension"**_, par exemple "Itreza2_C.c"
 
 Cette année l'advent of code ne durera que 12 jours, mais vous aurez jusqu'au 24 décembre pour soumettre vos solutions, le leaderboard sera publié juste après.
 
