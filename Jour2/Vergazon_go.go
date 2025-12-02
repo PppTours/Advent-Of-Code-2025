@@ -69,7 +69,7 @@ func partie1(ranges []Range) {
 	}
 
 	fmt.Printf("PARTIE 1 | Password : %d\n", password)
-
+	// 15873079081
 }
 
 func partie2(ranges []Range) {
@@ -133,6 +133,7 @@ func partie2(ranges []Range) {
 	}
 
 	fmt.Printf("PARTIE 2 | Password : %d\n", password)
+	// 22617871034
 
 }
 
