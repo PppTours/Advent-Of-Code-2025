@@ -11,13 +11,12 @@ import (
 	"strings"
 )
 
-
 type Range struct {
 	Start int
 	End   int
 }
 
-func partie1(ranges []Range){
+func partie1(ranges []Range) {
 
 	// Next step : detect invalid IDs and calculate their sum !
 	//
@@ -46,10 +45,10 @@ func partie1(ranges []Range){
 	//
 	// Let's stick to the naive version for now.
 
-	var password int
+	var password int = 0
 
 	for _, r := range ranges { // For each range
-		for i:= r.Start; i<=r.End; i++{ // For each index in the range
+		for i := r.Start; i <= r.End; i++ { // For each index in the range
 			// Convert the number to a string
 			// Warning : don't use string(i), it will treat i as an ASCII code and return a single char.
 			var i_string string = strconv.Itoa(i)
@@ -60,7 +59,7 @@ func partie1(ranges []Range){
 			}
 			// Second check : is the first half equal to the second half ?
 			n := len(i_string) // length of the string
-			mid := n/2 // midpoint
+			mid := n / 2       // midpoint
 			firstHalf := i_string[:mid]
 			secondHalf := i_string[mid:]
 			if firstHalf == secondHalf {
@@ -73,7 +72,7 @@ func partie1(ranges []Range){
 
 }
 
-func partie2(ranges []Range){
+func partie2(ranges []Range) {
 	fmt.Printf("PARTIE 2")
 
 	// Now, an ID is invalid if it is made only of some sequence of digits repeated
@@ -88,6 +87,53 @@ func partie2(ranges []Range){
 	// We need to get all the configurations a number could be repeated.
 	// For example, 8 can be 8 times 1, 4 times 2 or 2 times 4.
 	// Basically, we need all the number that divide the character length.
+
+	var password int = 0
+	for _, r := range ranges { // For each range
+		for i := r.Start; i <= r.End; i++ { // For each index in the range
+			// Convert the number to a string
+			var i_string string = strconv.Itoa(i)
+			var n int = len(i_string)
+			var divisors []int
+
+			// Get divisors
+			// Iterate from 1 up to n
+			for i := 1; i <= n; i++ {
+				// If n is divisible by i (remainder is 0)
+				if n%i == 0 {
+					divisors = append(divisors, i)
+				}
+			}
+
+			is_valid := true
+			for _, divisor := range divisors {
+				// 1. FIX: Skip the case where the divisor is 1
+				// (A string is always equal to itself, so we ignore this case)
+				if divisor == 1 {
+					continue
+				}
+
+				// Reconstruct the string with the repeated pattern and check if it matches
+				partLength := n / divisor
+				pattern := i_string[0:partLength]
+				reconstructed := strings.Repeat(pattern, divisor)
+
+				// If it matches, the ID is a repetition.
+				if reconstructed == i_string {
+					is_valid = false
+					break
+				}
+			}
+
+			if !is_valid {
+				password += i
+			}
+
+		}
+	}
+
+	fmt.Printf("PARTIE 2 | Password : %d\n", password)
+
 }
 
 func main() {
@@ -129,6 +175,5 @@ func main() {
 
 	partie1(ranges)
 	partie2(ranges)
-	
 
 }
